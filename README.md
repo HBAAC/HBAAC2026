@@ -2,7 +2,7 @@
 
 Cuộc thi: **HBAC 2026**
 
-## 📖 1. Project Overview
+## 1. Project Overview
 Dự án này tập trung giải quyết bài toán Time-series Forecasting cho danh mục B2B khổng lồ gồm **15,972 SKUs** của một nhà phân phối phụ tùng ô tô tại Việt Nam. Dữ liệu lịch sử giao dịch trải dài từ tháng 11/2020 đến tháng 09/2025 với hơn **700,000 bản ghi thô**.
 
 **Thách thức của bài toán:**
@@ -15,7 +15,7 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 
 ---
 
-## 📂 2. Kiến trúc Thư mục (Repository Structure)
+## 2. Kiến trúc Thư mục (Repository Structure)
 
 ```text
 ├── .gitignore                   <- Chặn các file rác, file hệ thống và data thô quá nặng.
