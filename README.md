@@ -3,11 +3,11 @@
 Cuộc thi: **HBAC 2026**
 
 ## 1. Project Overview
-Dự án này tập trung giải quyết bài toán Time-series Forecasting cho danh mục B2B khổng lồ gồm **15,972 SKUs** của một nhà phân phối phụ tùng ô tô tại Việt Nam. Dữ liệu lịch sử giao dịch trải dài từ tháng 11/2020 đến tháng 09/2025 với hơn **700,000 bản ghi thô**.
+Dự án này tập trung giải quyết bài toán Time-series Forecasting cho danh mục B2B khổng lồ gồm **15,972 SKUs** của một nhà phân phối phụ tùng ô tô tại Việt Nam. Dữ liệu lịch sử giao dịch trải dài từ tháng 11/2020 đến tháng 09/2025 với hơn **700,000 bản ghi thô**
 
 **Thách thức của bài toán:**
 1. **Dữ liệu thưa thớt & Biến động lớn:** Phần lớn các mã phụ tùng có tần suất xuất hiện rất thấp, nhu cầu không liên tục dẫn đến tạo ra hiện tượng Zero-Inflated.
-2. **Hiện tượng giá trị âm do hàng Returns:** Hành vi gara trả lại phụ tùng do chẩn đoán sai tạo ra các giao dịch số lượng âm (`Quantity < 0`), làm gãy đổ các mô hình Time-series truyền thống.
+2. **Hiện tượng giá trị âm do hàng Returns:** Hành vi gara trả lại phụ tùng do chẩn đoán sai tạo ra các giao dịch số lượng âm (`Quantity < 0`), làm gãy đổ các mô hình Time-series truyền thống
 3. **Độ phức tạp của quy mô dữ liệu:** Khi thực hiện time padding để tạo lưới liên tục cho toàn bộ SKUs trong hơn 1,700 ngày, quy mô dữ liệu bùng nổ lên tới **hơn 28 triệu dòng**, dễ gây tràn RAM.
 4. **Hàm mục tiêu khắt khe:** Đánh giá bằng **WRMSSE** (Weighted Root Mean Squared Scaled Error), đặt trọng số phạt cực nặng vào các mặt hàng mang lại lợi nhuận cao (LineProfit).
 
