@@ -26,7 +26,7 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 ├── notebooks/                   
 │   ├── 01_data_cleaning_and_eda.ipynb <- Pipeline dọn rác, xử lý số âm, Time-Series Padding kết hợp Phân tích trực quan hóa (Pareto, Sparsity).
 │   └── 02_rule_based_model_v6.ipynb   <- Feature Engineering, tính toán Moving Average và Hậu xử lý Rule-based.
-└── submissions/                 <- Chứa kết quả dự báo cuối cùng (`submission_final.csv`).
+└── submissions/                 <- Chứa kết quả dự báo cuối cùng (`submission.csv`).
 ```
 
 ---
@@ -40,7 +40,7 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 * **Bước 1 - Data Cleaning & EDA (Làm sạch & Khai phá dữ liệu):** Chạy file `notebooks/01_data_cleaning_and_eda.ipynb`. Tập lệnh này sẽ thực hiện song song 2 nhiệm vụ: 
   * Ép kiểu dữ liệu an toàn, xử lý triệt để lượng hàng trả về (tịnh tiến số âm), lấp đầy lưới thời gian (padding) để xuất ra ma trận `train_cleaned.csv` hoàn chỉnh
   * Tự động quét, vẽ biểu đồ phân phối lợi nhuận và định vị đặc tính thưa thớt (sparsity) của các mã hàng.
-* **Bước 2 - Tính toán Mô hình & Dự báo:** Chạy file `notebooks/02_model.ipynb`. Tập lệnh này sẽ lấy file data sạch ở Bước 1, áp dụng các công thức Moving Average, kích hoạt các Rule chặn sàn đối với các mã End-of-Life, và đóng gói ra file nộp bài chuẩn tại `submissions/submission_final.csv`
+* **Bước 2 - Tính toán Mô hình & Dự báo:** Chạy file `notebooks/02_model.ipynb`. Tập lệnh này sẽ lấy file data sạch ở Bước 1, áp dụng các công thức Moving Average, kích hoạt các Rule chặn sàn đối với các mã End-of-Life, và đóng gói ra file nộp bài chuẩn tại `submissions/submission.csv`
 
 ---
 
@@ -63,7 +63,7 @@ Mô hình toán học của chỉ số WRMSSE phạt cực nặng lỗi dự bá
 
 ### 4.4. Tinh chỉnh Lịch trình kinh doanh và Tự động Fallback
 * **Calendar Multipliers:** Mô hình tích hợp bộ điều chỉnh trọng số ngày đặc biệt, thực hiện giảm mạnh lượng cầu vào các ngày có hoạt động giao dịch thấp theo hành vi ngành (ví dụ: ngày Chủ Nhật với `sunday_multiplier`)
-* **Grid Search & Fallback Framework:** Thay vì cố định tham số, V9 vận hành một không gian tìm kiếm hẹp (Focused Search Space) quanh vùng cấu hình tối ưu của tập Validation nội bộ. Điểm đặc sắc nhất là cơ chế an toàn: Nếu cấu hình mới (`v9_best_grid`) không vượt qua được điểm kiểm định chéo của phiên bản cũ (v8 hoặc v5), hệ thống sẽ tự động kích hoạt chế độ Fallback bảo thủ để đảm bảo file nộp bài cuối cùng luôn giữ độ ổn định cao nhất
+* **Grid Search & Fallback Framework:** Thay vì cố định tham số, version model cuối cùng vận hành một không gian tìm kiếm hẹp (Focused Search Space) quanh vùng cấu hình tối ưu của tập Validation nội bộ. Điểm đặc sắc nhất là cơ chế an toàn: Nếu cấu hình mới không vượt qua được điểm kiểm định chéo của phiên bản cũ, hệ thống sẽ tự động kích hoạt chế độ Fallback bảo thủ để đảm bảo file nộp bài cuối cùng luôn giữ độ ổn định cao nhất
 * **Hậu xử lý (Post-processing):** Toàn bộ giá trị dự báo sau tính toán nếu xuất hiện số âm đều được cắt gọt nghiêm ngặt về ngưỡng sàn kho bãi thực tế bằng phương pháp `clip(0)`
 
 ---
