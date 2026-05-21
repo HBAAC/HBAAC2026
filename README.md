@@ -9,7 +9,7 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 1. **Dữ liệu thưa thớt & Biến động lớn:** Phần lớn các mã phụ tùng có tần suất xuất hiện rất thấp, nhu cầu không liên tục dẫn đến tạo ra hiện tượng Zero-Inflated.
 2. **Hiện tượng giá trị âm do hàng Returns:** Hành vi gara trả lại phụ tùng do chẩn đoán sai tạo ra các giao dịch số lượng âm (`Quantity < 0`), làm gãy đổ các mô hình Time-series truyền thống
 3. **Độ phức tạp của quy mô dữ liệu:** Khi thực hiện time padding để tạo lưới liên tục cho toàn bộ SKUs trong hơn 1,700 ngày, quy mô dữ liệu bùng nổ lên tới **hơn 28 triệu dòng**, dễ gây tràn RAM
-4. **Hàm mục tiêu khắt khe:** Đánh giá bằng **WRMSSE** (Weighted Root Mean Squared Scaled Error), đặt trọng số phạt cực nặng vào các mặt hàng mang lại lợi nhuận cao (LineProfit)
+4. **Hàm mục tiêu khắt khe:** Đánh giá bằng **WRMSSE** (Weighted Root Mean Squared Scaled Error), đặt trọng số phạt cực nặng vào các mặt hàng mang lại lợi nhuận cao
 
 **Hướng tiếp cận của Team:** Thay vì sử dụng các mô hình Machine Learning hộp đen (Black-box), team tiếp cận bằng phương pháp Data-driven: Tối ưu hạ tầng lưu trữ qua **SQL Server**, xử lý nhiễu bằng thuật toán tịnh tiến tích lũy (Rolling Compensation), và xây dựng mô hình **Rule-based (Heuristics & Moving Average)** tối ưu trực tiếp cho hàm mục tiêu WRMSSE
 
