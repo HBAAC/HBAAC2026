@@ -1,1 +1,13 @@
+# 1. Bỏ qua toàn bộ thư mục dữ liệu (bảo mật và chống đầy bộ nhớ)
+dataset/
+*.csv
+*.xlsx
 
+# 2. Bỏ qua các file rác của Jupyter Notebook và Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# 3. Bỏ qua file hệ thống (nếu bạn dùng Mac hoặc Windows)
+.DS_Store
+Thumbs.db
