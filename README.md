@@ -21,8 +21,8 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 ├── .gitignore                   <- Chặn các file rác, file hệ thống và data thô quá nặng.
 ├── README.md                    <- Tổng quan dự án và hướng dẫn vận hành.
 ├── data/                        
-│   ├── raw/                     <- Chứa `train.csv` và `sample_submission.csv` (Không đưa lên Git).
-│   └── processed/               <- Dữ liệu đã làm sạch (`train_cleaned.csv`).
+│   ├── raw/                     <- Chứa `train.csv` và `sample_submission.csv`
+│   └── processed/               <- Dữ liệu đã làm sạch (`train_cleaned.csv`)
 ├── notebooks/                   
 │   ├── 01_data_cleaning_and_eda.ipynb <- Pipeline dọn rác, xử lý số âm, Time-Series Padding kết hợp Phân tích trực quan hóa (Pareto, Sparsity).
 │   └── 02_rule_based_model_v6.ipynb   <- Feature Engineering, tính toán Moving Average và Hậu xử lý Rule-based.
