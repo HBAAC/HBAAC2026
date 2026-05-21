@@ -31,7 +31,7 @@ Dự án này tập trung giải quyết bài toán Time-series Forecasting cho 
 
 ---
 
-## 🚀 3. Hướng dẫn cài đặt và chạy code
+## 3. Hướng dẫn cài đặt và chạy code
 
 Để tái tạo lại toàn bộ kết quả của nhóm từ dữ liệu thô, vui lòng thực hiện theo đúng thứ tự sau:
 
